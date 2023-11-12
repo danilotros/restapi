@@ -13,12 +13,7 @@
                    }
                        post{
                                always{
-                                      publishHTML([allowMissing: false,
-                                                   alwaysLinkToLastBuild: false,
-                                                   keepAll: false, reportDir: 'target/serenity',
-                                                   reportFiles: 'index.html',
-                                                   reportName: 'HTML Report',
-                                                   reportTitles: ''])
+                                    publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, escapeUnderscores: false, keepAll: false, reportDir: 'target/site/serenity', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
                                }
 
                            }

@@ -16,7 +16,7 @@
                                       publishHTML([allowMissing: false,
                                                    alwaysLinkToLastBuild: false,
                                                    keepAll: false, reportDir: 'target/serenity',
-                                                   reportFiles: 'overview-features.html',
+                                                   reportFiles: 'index.html',
                                                    reportName: 'HTML Report',
                                                    reportTitles: ''])
                                }

@@ -7,7 +7,7 @@
            stages{
             stage('Execute Test'){
                    steps{
-                       tool name: 'JDK_8',type: 'jdk'
+                       tool name: 'JDK_11',type: 'jdk'
                        tool name: 'Gradle 7.5.1', type:'gradle'
                        bat "gradle clean test aggregate"
                    }

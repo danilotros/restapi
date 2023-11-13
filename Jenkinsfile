@@ -10,7 +10,7 @@
            stages{
             stage('sonar'){
                 steps{
-                      bat "sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"
+                      bat "${sonar-scanner}/bin/sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"
                 }
             }
             stage('Execute Test'){

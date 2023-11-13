@@ -3,7 +3,6 @@
            tools{
                jdk 'JDK_11'
                gradle 'Gradle 7.5.1'
-               sonar-scanner 'sonnar-scanner'
            }
            stages{
             stage('sonar'){

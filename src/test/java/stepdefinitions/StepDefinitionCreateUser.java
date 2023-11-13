@@ -21,7 +21,7 @@ import static utils.Constants.CREATE_USER_CODE;
 public class StepDefinitionCreateUser {
     @When("^you create an user with name (.*) and job (.*)$")
     public void youCreateAnUserWithNameAndJob(String name, String job) {
-        List<UserModel> userModelList=new ArrayList<>();
+        List<UserModel> userModelList=new ArrayList<UserModel>();
         UserModel userModel=new UserModel(name,job);
         userModelList.add(userModel);
         theActorInTheSpotlight().attemptsTo(CreateUser.with(userModelList));

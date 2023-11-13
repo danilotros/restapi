@@ -9,9 +9,9 @@
                }
            stages{
             stage('sonar'){
-                steps{
-                      bat "${sonar_scanner}/bin/sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"
-                }
+            withSonarQubeEnv('SonarQube'){
+                 steps{bat "${sonar_scanner}/bin/sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"}
+             }
             }
              stage("Quality Gate") {
                         steps {

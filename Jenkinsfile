@@ -5,14 +5,17 @@
                gradle 'Gradle 7.5.1'
            }
            stages{
+            stage('sonar'){
+                steps{
+                      def scannerHome = tool 'sonnar-scanner'
+                      bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"
+                }
+            }
             stage('Execute Test'){
                    steps{
                        tool name: 'JDK_11',type: 'jdk'
                        tool name: 'Gradle 7.5.1', type:'gradle'
                        bat "gradle clean test aggregate"
-                       bat 'cmd.exe'
-                       bat 'echo sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67'
-                       //bat "sonar-scanner -Dsonar.projectKey=restapi -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_a5b70eef4d3c8511d231d70da3696ed469553b67"
                    }
                        post{
                                always{

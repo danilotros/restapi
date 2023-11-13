@@ -22,6 +22,7 @@
                             waitForQualityGate abortPipeline: true
                           }
                         }
+            }
             stage('Execute Test'){
                    steps{
                        tool name: 'JDK_11',type: 'jdk'

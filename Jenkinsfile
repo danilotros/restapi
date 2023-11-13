@@ -16,6 +16,12 @@
                  }
             }
 
+            stage("Quality Gate") {
+                        steps {
+                          timeout(time: 1, unit: 'HOURS') {
+                            waitForQualityGate abortPipeline: true
+                          }
+                        }
             stage('Execute Test'){
                    steps{
                        tool name: 'JDK_11',type: 'jdk'

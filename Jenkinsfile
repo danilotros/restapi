@@ -36,6 +36,11 @@
 
                            }
                }
+               stage('Post Email'){
+                    step{
+                        emailext attachLog: true, body: 'fallo', subject: 'fallo', to: 'danielgarcia@gmail.com'
+                    }
+               }
 
            }
 

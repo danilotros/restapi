@@ -38,7 +38,7 @@
                }
                stage('Post Email'){
                     steps{
-                        emailext attachLog: true, body: 'fallo', subject: 'fallo', to: 'danielgarcia10211@gmail.com'
+                        emailext attachLog: true, body: 'prueba', recipientProviders: [buildUser(), contributor()], subject: 'prueba', to: 'danielgarcia10211@gmail.com'
                     }
                }
 

@@ -17,7 +17,7 @@ steps:
     versionSpec: '11'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: LocalDirectory
-    jdkFile: "JDK Bin.zip"
+    jdkFile: "C:/Users/dgarciap/Documents/jdk-11.0.20"
     jdkDestinationDirectory: "$(agent.tempDirectory)/bin"
 - task: Gradle@2
   inputs:

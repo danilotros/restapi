@@ -5,19 +5,21 @@
 
 trigger:
 - main
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: vs2017-win2016
 
-pool:
-  name: Azure Pipelines
-
-steps:
-- task: Gradle@2
-  inputs:
-    workingDirectory: ''
-    gradleWrapperFile: 'gradlew'
-    gradleOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '11'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build'
+  steps:
+  - task: Gradle@2
+    inputs:
+     workingDirectory: ''
+     gradleWrapperFile: 'gradlew'
+     gradleOptions: '-Xmx3072m'
+     javaHomeOption: 'JDKVersion'
+     jdkVersionOption: '11'
+     jdkArchitectureOption: 'x64'
+     publishJUnitResults: true
+     testResultsFiles: '**/TEST-*.xml'
+     tasks: 'build'

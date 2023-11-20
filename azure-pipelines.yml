@@ -12,6 +12,12 @@ pool:
     - agent.name -equals daniel
 
 steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'LocalDirectory'
+    jdkFile: 'C:\Users\dgarciap\Documents\jdk-11.0.20\bin'
 - task: Gradle@2
   inputs:
     workingDirectory: ''
@@ -20,8 +26,6 @@ steps:
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.11'
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    jdkDirectory: 'C:\Users\dgarciap\Documents\jdk-11.0.20\bin' 
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'

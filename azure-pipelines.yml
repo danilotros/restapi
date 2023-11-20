@@ -14,10 +14,11 @@ pool:
 steps:
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '8'
+    versionSpec: '11'
     jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'LocalDirectory'
-    jdkFile: 'C:\Users\dgarciap\Documents\jdk-11.0.20\bin'
+    jdkSourceOption: LocalDirectory
+    jdkFile: "JDK Bin.zip"
+    jdkDestinationDirectory: "$(agent.tempDirectory)/bin"
 - task: Gradle@2
   inputs:
     workingDirectory: ''
